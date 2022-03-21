@@ -1,47 +1,21 @@
-import React, {memo} from "react";
+import React from "react";
 import classes from './mainPage.module.css'
 
-const MainPage = () => {
+const MainPage = (props) => {
     return (
         <div className={classes.mainPageWrapper}>
 
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
+            {props.tasks.map(task => (
+                <div className={classes.taskCard} key={task.id}>
+                    <div>{task.title}</div>
+                    <div>{task.description}</div>
+                    <div>20.03.2022 17:00</div>
+                </div>
+                )
+            )}
 
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
-
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
-
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
-
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
-
-           <div className={classes.taskCard}>
-               <div>Title</div>
-               <div>Description</div>
-               <div>Deadline</div>
-           </div>
         </div>
     )
 }
 
-export default memo(MainPage)
+export default MainPage
