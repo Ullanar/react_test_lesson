@@ -13,8 +13,7 @@ const App = () => {
 
   return (
     <div className="App">
-
-      <MainPage />
+        {/*<Route path="/" element={<MainPage />}/>*/}
     </div>
   );
 }
